@@ -1,6 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: master
 
 images:
 - name: mssql
@@ -14,6 +13,7 @@ images:
   newTag: 8.11.2
 
 resources:
+  - ../../
   - mssql.yaml
   - redis.yaml
   - solr.yaml
