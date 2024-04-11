@@ -13,7 +13,6 @@ images:
   newTag: 8.11.2
 
 resources:
-  - ../../
   - mssql.yaml
   - redis.yaml
   - solr.yaml
