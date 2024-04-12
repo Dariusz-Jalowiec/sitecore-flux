@@ -7,4 +7,5 @@ resources:
   - secrets
   - ingress-nginx
   - init
+  - volumes
 
