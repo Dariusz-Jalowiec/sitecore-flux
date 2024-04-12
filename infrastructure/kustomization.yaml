@@ -3,8 +3,9 @@ kind: Kustomization
 namespace: master
 
 resources:
-  - external
   - secrets
+  - external
   - ingress-nginx
   - init
   - pvc
+
