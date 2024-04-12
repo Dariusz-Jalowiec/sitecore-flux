@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: device-detection
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: device-detection
+  resources:
+    requests:
+      storage: 1Gi
