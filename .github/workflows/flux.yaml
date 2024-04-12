@@ -1,0 +1,36 @@
+name: Flux Configuration Setup
+
+on:
+  pull_request:
+    types:
+    - opened
+
+jobs:
+  setup-flux:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Azure Login
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+    - name: Azure CLI script
+      uses: azure/cli@v2
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+            az k8s-configuration flux create \
+                --name ${{ github.event.pull_request.head.ref }} \
+                --namespace ${{ github.event.pull_request.head.ref }}
+                --resource-group rg-aks-branches-cus-001 \
+                --cluster-name aks-branches-cus-001 \
+                --url https://github.com/${{ github.repository }} \
+                --branch ${{ github.event.pull_request.head.ref }} \
+                --https-user Dariusz-Jalowiec
+                --https-key ${{ secrets.GIT_ACCESS_TOKEN }}
+                --kustomization name=infrastructure path=./infrastructure prune=true \
+                --kustomization name=apps path=./apps prune=true \
