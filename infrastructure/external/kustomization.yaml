@@ -3,10 +3,10 @@ kind: Kustomization
 
 images:
 - name: mssql
-  newName: scr.sitecore.com/nonproduction/mssql-developer
+  newName: scr.sitecore.com/sxp/nonproduction/mssql-developer
   newTag: 2017-ltsc2022 
 - name: solr
-  newName: scr.sitecore.com/nonproduction/solr
+  newName: scr.sitecore.com/sxp/nonproduction/solr
   newTag: 8.11.2-ltsc2022
 
 resources:
