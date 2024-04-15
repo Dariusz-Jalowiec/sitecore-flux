@@ -3,14 +3,14 @@ kind: Kustomization
 
 images:
 - name: mssql
-  newName: mcr.microsoft.com/mssql/server
-  newTag: 2017-CU21-ubuntu-16.04
+  newName: sitecore-xm1-mssql/sxp/sitecore-xm1-mssql
+  newTag: 10.0.3-ltsc2019
 - name: redis
   newName: redis
   newTag: 4.0.14-alpine
 - name: solr
   newName: scr.sitecore.com/sxp/sitecore-xm1-solr
-  newTag: 10.0.3-ltsc2012
+  newTag: 10.0.3-ltsc2019
 
 resources:
   - mssql.yaml
