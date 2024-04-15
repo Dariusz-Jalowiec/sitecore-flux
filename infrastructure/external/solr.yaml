@@ -3,8 +3,6 @@ kind: Service
 metadata:
   name: solr
 spec:
-  nodeSelector:
-    kubernetes.io/os: windows
   selector:
     app: solr
   ports:
@@ -28,7 +26,7 @@ spec:
         app: solr
     spec:
       nodeSelector:
-        kubernetes.io/os: windows
+        kubernetes.io/os: linux
       containers:
       - name: solr
         image: solr
