@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       nodeSelector:
-        kubernetes.io/os: windows
+        kubernetes.io/os: linux
       imagePullSecrets:
         - name: sitecore-docker-registry
       containers:
