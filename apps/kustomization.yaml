@@ -1,17 +1,17 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: master
+namespace: issue-acrtest
 
 images:
 - name: sitecore-xm1-cd
-  newName: scr.sitecore.com/sxp/sitecore-xm1-cd
-  newTag: 10.3-ltsc2022
+  newName: acrbranchescus002.azurecr.io/test/enterprisedev-rendering
+  newTag: issue-73-8671307865.1
 - name: sitecore-xm1-cm
-  newName: scr.sitecore.com/sxp/sitecore-xm1-cm
-  newTag: 10.3-ltsc2022
+  newName: acrbranchescus002.azurecr.io/test/enterprisedev-xm1-cm
+  newTag: issue-73-8671307865.1
 - name: sitecore-xm1-id
-  newName: scr.sitecore.com/sxp/sitecore-id7
-  newTag: 10.3-ltsc2022
+  newName: acrbranchescus002.azurecr.io/test/enterprisedev-id7
+  newTag: issue-73-8671307865.1
 resources:
 - init
 - configmaps
