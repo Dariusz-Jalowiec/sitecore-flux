@@ -5,8 +5,8 @@ images:
   newName: acrbranchescus002.azurecr.io/test/enterprisedev-xm1-mssql-init
   newTag: issue-73-8671307865.1
 - name: sitecore-xm1-solr-init
-  newName: scr.sitecore.com/sxp/sitecore-xm1-solr-init
-  newTag: 10.3-ltsc2022
+  newName: rahnemann/solr-init
+  newTag: 1.0-1809
 resources:
 - mssql-init.yaml
 - solr-init.yaml
