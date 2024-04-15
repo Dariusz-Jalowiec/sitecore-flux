@@ -10,3 +10,4 @@ images:
 resources:
 - mssql-init.yaml
 - solr-init.yaml
+
