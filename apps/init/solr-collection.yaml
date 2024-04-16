@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: solr-modify-script
+data:
+  modify-script.ps1: |
+    Invoke-RestMethod -Uri "http://solr-service:8983/solr/admin/collections?action=CREATE&name=mycollection&numShards=2&replicationFactor=2&maxShardsPerNode=2&collection.configName=myconfig" -Method POST
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: solr-modify-job
+spec:
+  template:
+    metadata:
+      labels:
+        app: solr-modify
+    spec:
+      containers:
+      - name: solr-modify-container
+        image: mcr.microsoft.com/powershell:latest
+        command: ["pwsh", "-File", "/scripts/modify-script.ps1"]
+        volumeMounts:
+        - name: scripts
+          mountPath: /scripts
+      restartPolicy: Never
+      volumes:
+      - name: scripts
+        configMap:
+          name: solr-modify-script
