@@ -23,10 +23,5 @@ spec:
             secretKeyRef:
               name: sitecore-solr
               key: sitecore-solr-core-prefix-name.txt
-        - name: TOPOLOGY
-          valueFrom:
-            secretKeyRef:
-              name: sitecore-solr
-              key: sitecore-solr-core-topology.txt
       restartPolicy: Never
   backoffLimit: 5
