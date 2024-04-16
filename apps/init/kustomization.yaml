@@ -12,4 +12,3 @@ images:
 resources:
 - mssql-init.yaml
 - solr-init.yaml
-- solr-collection-init.yaml
