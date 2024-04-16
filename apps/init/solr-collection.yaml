@@ -1,10 +1,15 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: solr-modify-script
+  name: sitecore-schema-populate-script
 data:
-  modify-script.ps1: |
-    Invoke-RestMethod -Uri "http://solr-service:8983/solr/admin/collections?action=CREATE&name=mycollection&numShards=2&replicationFactor=2&maxShardsPerNode=2&collection.configName=myconfig" -Method POST
+  populate-script.ps1: |
+    $sitecoreUrl = "http://solr:8983/sitecore/admin/PopulateManagedSchema.aspx"
+    $payload = @{
+        configset = "sitecore"
+        indexes = @("sitecore_sxa_master_index", "sitecore_sxa_web_index")
+    } | ConvertTo-Json
+    Invoke-RestMethod -Uri $sitecoreUrl -Method Post -Body $payload -ContentType "application/json"
 ---
 apiVersion: batch/v1
 kind: Job
@@ -27,4 +32,4 @@ spec:
       volumes:
       - name: scripts
         configMap:
-          name: solr-modify-script
+          name: sitecore-schema-populate-script
