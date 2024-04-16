@@ -23,7 +23,7 @@ spec:
       containers:
       - name: solr-modify-container
         image: mcr.microsoft.com/powershell:latest
-        command: ["pwsh", "-File", "/scripts/modify-script.ps1"]
+        command: ["pwsh", "-File", "/scripts/populate-script.ps1"]
         volumeMounts:
         - name: scripts
           mountPath: /scripts
