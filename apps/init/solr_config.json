@@ -1,7 +1,0 @@
-{
-    "configset": "sitecore",
-    "indexes": [
-      "sitecore_sxa_master_index",
-      "sitecore_sxa_web_index"
-    ]
-  }

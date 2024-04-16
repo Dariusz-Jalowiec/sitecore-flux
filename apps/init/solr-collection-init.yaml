@@ -17,10 +17,9 @@ metadata:
   name: solr-modify-job
 spec:
   template:
-    metadata:
-      labels:
-        app: solr-modify
     spec:
+      nodeSelector:
+        kubernetes.io/os: windows
       containers:
       - name: solr-modify-container
         image: mcr.microsoft.com/powershell:latest
@@ -33,3 +32,4 @@ spec:
       - name: scripts
         configMap:
           name: sitecore-schema-populate-script
+          
