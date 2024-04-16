@@ -3,11 +3,11 @@ kind: Kustomization
 
 images:
 - name: mssql
-  newName: scr.sitecore.com/sxp/nonproduction/mssql-developer
-  newTag: 2017-ltsc2022 
+  newName: mcr.microsoft.com/mssql/server
+  newTag: 2017-CU21-ubuntu-16.04
 - name: solr
-  newName: scr.sitecore.com/sxp/nonproduction/solr
-  newTag: 8.11.2-ltsc2022
+  newName: solr
+  newTag: 8.11.2
 
 resources:
   - mssql.yaml
