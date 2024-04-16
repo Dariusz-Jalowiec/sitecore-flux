@@ -14,14 +14,14 @@ data:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: solr-modify-job
+  name: solr-collection-init
 spec:
   template:
     spec:
       nodeSelector:
         kubernetes.io/os: windows
       containers:
-      - name: solr-modify-container
+      - name: solr-collection-init
         image: mcr.microsoft.com/powershell:latest
         command: ["pwsh", "-File", "/scripts/populate-script.ps1"]
         volumeMounts:
