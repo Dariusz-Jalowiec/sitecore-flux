@@ -43,13 +43,3 @@ spec:
             name: id
             port: 
               number: 80
-  tls:
-  - secretName: global-cd-tls
-    hosts:
-    - cd-placeholder-hostname
-  - secretName: global-cm-tls
-    hosts:
-    - cm-placeholder-hostname
-  - secretName: global-id-tls
-    hosts:
-    - id-placeholder-hostname
