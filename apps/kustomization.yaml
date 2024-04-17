@@ -14,7 +14,7 @@ images:
   newTag: 10.3-ltsc2022
 resources:
 - init
-- configmaps
+- ../configmaps
 - cm.yaml
 - cd.yaml
 - id.yaml
