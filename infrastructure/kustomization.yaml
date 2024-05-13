@@ -14,8 +14,8 @@ images:
   newTag: 8.11.2
 
 resources:
+  - service_account
   - secrets
   - external
   - ingress-nginx
   - pvc
-
